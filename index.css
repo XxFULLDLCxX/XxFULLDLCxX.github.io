@@ -3,6 +3,7 @@ body {
 }
 iframe {
     position:fixed;
+    transform: rotate(90deg);
     top:0;
     left:0;
     bottom:0;
