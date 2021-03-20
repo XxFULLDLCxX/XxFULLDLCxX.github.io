@@ -13,7 +13,15 @@ iframe {
     margin:0;
     padding:0;
     overflow:hidden;
-    z-index:999999;}
+    z-index:999999;
+    } video::-internal-media-controls-download-button {
+        display:none; 
+    } video::-webkit-media-controls-enclosure {
+        overflow:hidden;
+    } video::-webkit-media-controls-panel {
+        width: calc(100% + 30px); /* Adjust as needed */
+    }  /* Remove botão de download de vídeos */
+
 
 button {
     position:fixed;
