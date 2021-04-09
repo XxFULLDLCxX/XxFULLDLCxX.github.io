@@ -1,0 +1,316 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .container {
+    padding: 25px;
+    display: flex;
+    place-content: center;
+    height: 100vh;
+    min-width: 300px;
+    transition: all 1ms;
+  }
+  
+  .mode {
+    display: flex;
+    place-content: center;
+  
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    
+    border-radius: 24px;
+    width: 42px;
+    height: 24px;
+  }
+  
+  #dark {
+    background-image: linear-gradient(#000, #033);
+    color: #0ff;
+  }
+  #dark .mode {
+    border: 3px solid #0ff;
+  }
+  
+  #light {
+    background-image: linear-gradient(#0ff, #fff);
+    color: #033;
+  }
+  #light .mode {
+    border: 3px solid #011;
+  }
+  
+  .mode .icon:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  }
+  .mode .icon {
+    position: relative;
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 44px; /* Specific width is required for Firefox. */
+  
+    background: transparent; /* Otherwise white in Chrome */
+  }
+  .mode .icon::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    border-radius: 24px;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  #dark .mode .icon::-webkit-slider-thumb {
+    background-color: #099;
+    border: 2px solid #0ff;
+  }
+  #dark-icon::-webkit-slider-thumb {
+    background-image: url("https://static.thenounproject.com/png/2048442-200.png");
+  }
+  
+  #light .mode .icon::-webkit-slider-thumb {
+    background-color: #0ff;
+    border: 2px solid #011;
+  }
+  #light-icon::-webkit-slider-thumb {
+    background-image: url("https://static.thenounproject.com/png/76-200.png");
+  }
+  
+  .content {
+    /*
+    */
+    flex-grow: 1;
+    max-width: 800px;
+    min-height: 500px;
+    margin-top: 40px;
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 5px 5px 50px 8px rgba(0, 0, 0, 0.59);
+  }
+  
+  .content .header {
+    position: relative;
+    text-align: center;
+  }
+  .content .header img {
+    flex-grow: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 10;
+    display: block;
+    width: 185px;
+    height: 185px;
+    border-radius: 100%;
+    transform: translateY(-35%);
+    box-shadow: 0px -10px 130px #033;
+    border: 8px solid rgba(0, 0, 0, 0);
+  }
+  #dark .content .header img {
+    /*
+    box-shadow: 0px -10px 150px #0ff;
+    */
+    filter: drop-shadow(0px 0px 1px #000);
+  }
+  
+  .content .header h1 {
+    font-family: sans-serif;
+    font-size: 1.5em;
+  }
+  
+  .content .header h1 span {
+    visibility: hidden;
+  }
+  
+  .header .glitch span {
+    max-width: 163px; 
+    min-width: 163px;
+    top: 0px;
+    margin: auto;
+    margin-left: 13px;
+  }
+  
+  .content .banner {
+    flex-grow: 1;
+  
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+  
+    height: 130px;
+    background-image: url("https://veekun.com/static/pokedex/downloads/platinum-back.png");
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 15px;
+  }
+  #dark .content .banner {
+    filter: drop-shadow(0px 0px 5px #0ff);
+  }
+  #light .content .banner {
+    filter: drop-shadow(0px 0px 10px #033);
+  }
+  
+  .content .wrapper {
+    position: relative;
+    top: 0px;
+    margin: 0px;
+    flex-grow: 1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 15px;
+    background-color: rgba(8, 8, 8, 0);
+    border: 1px solid #088;
+    border-radius: 15px;
+    text-align: center;
+  }
+  .content .wrapper h2 {
+    font-size: 3em;
+    padding: 25px;
+  }
+  
+  .content .wrapper img {
+    flex-grow: 1;
+    filter: invert(1) hue-rotate(135deg) drop-shadow(0px 0px 0px #0ff);
+    max-width: 200px;
+    max-height: 100px;
+  }
+  
+  .content .wrapper ol {
+    list-style-type: none;
+  }
+  .content .wrapper ol li {
+    display: inline;
+    font-size: 2.4em;
+  }
+  
+  .glitch {
+    position: relative;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+      0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  .glitch span {
+    position: absolute;
+    z-index: 1;
+    cursor: none;
+    font-family: sans-serif;
+    font-size: 1.5em;
+  }
+  .glitch span:hover {
+    visibility: hidden;
+  }
+  .glitch span:first-child {
+    /*background: #8f8;*/
+    animation: glitch 1000ms infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-0.025em, -0.0155em);
+    z-index: 10;
+    opacity: 0.8;
+  }
+  .glitch span:last-child {
+    z-index: 10;
+    /*background: #39f;*/
+    animation: glitch 500ms infinite;
+    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+    transform: translate(-0.0155em, -0.025em);
+    opacity: 0.8;
+  }
+  @keyframes glitch {
+    0% {
+      text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+        -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+        0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    14% {
+      text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+        -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+        0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    15% {
+      text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+        0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+        -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    49% {
+      text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+        0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+        -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    50% {
+      text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+        0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    99% {
+      text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+        0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    100% {
+      text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+        -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+        -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+  }
+  .glitch,
+  .glitch span:last-child {
+    animation: glitch 1000ms infinite;
+  }
+  .glitch span:first-child {
+    animation: glitch 1000ms infinite;
+  }
+  .glitch span {
+    animation: glitch 750ms infinite;
+  }
+  
+  /*
+  @media screen and (min-width: 1100px) {
+    .content {
+      flex-flow: row wrap;
+    }
+  }
+  
+  @media screen and (max-width: 950px) {
+    .content {
+      flex-flow: row-reverse wrap;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .content {
+      //flex-flow: column wrap;
+      //flex-direction: column;
+      //flex-wrap: nowrap;
+    }
+  }
+  
+  @media screen and (max-height: 700px) {
+    .content {
+      //align-content: stretch;
+    }
+  }
+  
+  
+  */
+  @media screen and (max-width: 454px) {
+    .glitch span,
+    .content h1 {
+      font-size: 1.5em;
+    }
+    .header .glitch span {
+      /*XxFULLDLCxX RESPOSIVE*/
+      top: 45px;
+      left: 23px;
+      right: 0px;
+      margin: auto;
+    }
+  }
