@@ -1,0 +1,99 @@
+.mode {
+  display: flex;
+  place-content: center;
+
+  position: absolute;
+  top: 20px;
+  right: 30px;
+
+  border-radius: 24px;
+  width: 42px;
+  height: 24px;
+}
+.mode .icon:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+.mode .icon {
+  position: relative;
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 44px; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+.mode .icon::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  border-radius: 24px;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#dark {
+  background-image: linear-gradient(#000, #033);
+  color: #0ff;
+}
+#dark .content {
+  box-shadow: 5px 5px 50px 5px rgba(0, 255, 255, 0.1);
+}
+#dark .mode {
+  border: 3px solid #0ff;
+}
+#dark .mode .icon::-webkit-slider-thumb {
+  background-color: #099;
+  border: 2px solid #0ff;
+}
+#dark-icon::-webkit-slider-thumb {
+  background-image: url("https://static.thenounproject.com/png/2048442-200.png");
+}
+#dark .header img {
+  box-shadow: 0px 0px 100px #000;
+  border: 8px solid rgba(0, 0, 0, 0);
+}
+#dark .banner {
+  filter: drop-shadow(0px 0px 5px #0ff);
+}
+#dark .glitch {
+  color: #bff;
+}
+#dark .wrapper {
+  border: 1px solid #088;
+}
+#dark .wrapper img {
+  filter: invert(0) hue-rotate(0deg) drop-shadow(0px 0px 5px #0ff);
+}
+#dark .wrapper ol li:hover {
+  filter: drop-shadow(0px 0px 10px #0ff);
+}
+
+#light {
+  background-image: linear-gradient(#0ff, #fff);
+  color: #033;
+}
+#light .mode {
+  border: 3px solid #011;
+}
+#light .mode .icon::-webkit-slider-thumb {
+  background-color: #0ff;
+  border: 2px solid #011;
+}
+#light-icon::-webkit-slider-thumb {
+  background-image: url("https://static.thenounproject.com/png/76-200.png");
+}
+#light .header img {
+  box-shadow: 0px 0px 100px #033;
+  border: 8px solid rgba(0, 0, 0, 0);
+}
+#light .banner {
+  filter: drop-shadow(0px 0px 10px #033);
+}
+#light .glitch {
+  color: #000;
+}
+#light .wrapper {
+  border: 1px solid #088;
+}
+#light .wrapper ol li:hover {
+  filter: drop-shadow(0px 0px 10px #033);
+}

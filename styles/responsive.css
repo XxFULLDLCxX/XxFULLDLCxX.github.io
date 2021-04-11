@@ -1,0 +1,14 @@
+
+@media screen and (max-width: 454px) {
+  .glitch span,
+  .content h1 {
+    font-size: 1.5em;
+  }
+  .header .glitch span {
+    /*XxFULLDLCxX RESPOSIVE*/
+    top: 30px;
+    left: 23px;
+    right: 0px;
+    margin: auto;
+  }
+}

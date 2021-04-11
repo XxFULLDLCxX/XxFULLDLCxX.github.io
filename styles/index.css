@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+.container {
+  padding: 25px;
+  display: flex;
+  flex-flow: column wrap;
+  place-content: center;
+  min-height: 100vh;
+  min-width: 320px;
+  transition: all 1ms;
+}
+
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: wrap;
+  place-content: center;
+  max-height: 500px;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 50px 8px rgba(0, 0, 0, .6);
+}
+
+.content .header {
+  flex-grow: 1;
+  position: relative;
+  text-align: center;
+  margin: 15px;
+}
+.header img {
+  flex-grow: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 10;
+  display: block;
+  width: 185px;
+  height: 185px;
+  border-radius: 100%;
+  transform: translateY(-35%);
+}
+.header .banner {
+  flex-grow: 1;
+  height: 130px;
+  background-image: url("https://veekun.com/static/pokedex/downloads/platinum-back.png");
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 15px;
+}
+.header .glitch span {
+  max-width: 163px;
+  min-width: 163px;
+  top: 2px;
+  margin: auto;
+  margin-left: 13px;
+  font-family: sans-serif;
+  font-size: 1.5em;
+}
+.header h1 {
+  font-family: sans-serif;
+  font-size: 1.5em;
+}
+.header h1 span {
+  visibility: hidden;
+}
+
+.content .wrapper {
+  flex-grow: 1;
+  display: flex;
+  max-height: 300px;
+  max-width: 600px;
+  flex-direction: column;
+  place-content: center;
+  margin: 15px;
+  border-radius: 15px;
+}
+.wrapper img {
+  flex-grow: 1;
+  filter: invert(1) hue-rotate(135deg) drop-shadow(0px 0px 0px #0ff);
+  max-width: 225px;
+  max-height: 100px;
+  margin: 30px 15px 0 45px;
+  border-radius: 15px;
+  min-width: 0;
+  min-height: 0;
+}
+.wrapper h2 {
+  text-align: right;
+  font-size: 3em;
+  margin: 0px 45px 30px 0px;
+}
+.wrapper ol {
+  margin: 10px;
+  text-align: center;
+  list-style-type: none;
+}
+.wrapper ol li {
+  display: inline;
+  font-size: 2.3em;
+}
+.wrapper li:last-child{
+  filter: drop-shadow(0px 0px 10px #0ff);
+}
+
+a:link {
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.noselect {
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
